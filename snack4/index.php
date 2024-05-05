@@ -5,7 +5,16 @@
 //Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
 
 
-
+             function getRandNumb($min, $max, $nItems){
+                $newArray = [];
+                while(count($newArray)< $nItems){
+                    $number = rand($min, $max);
+                    if(!in_array($number, $newArray)){
+                        $newArray[] = $number;
+                    }
+                }
+            return $newArray;
+            }
 
 
 
@@ -35,7 +44,13 @@
 
 
 <body>
-
+<h1>snack 4</h1>
+        <?php
+         $randNums = getRandNumb(1,100,15);
+         foreach($randNums as $number){
+            echo "$number  ";
+         }
+        ?>
 
 </body>
 
