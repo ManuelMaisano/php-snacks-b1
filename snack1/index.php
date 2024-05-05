@@ -4,6 +4,52 @@
 //Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema:
 //Olimpia Milano - Cantù | 55-60
 
+$matches = [
+    [
+      "squadraCasa" => "Milano",
+      "squadraOspite" => "Milazzo",
+      "puntiCasa" => 85,
+      "puntiOspite" => 68
+    ],
+    [
+      "squadraCasa" => "Clippers",
+      "squadraOspite" => "lakers",
+      "puntiCasa" => 78,
+      "puntiOspite" => 83
+    ],
+    [
+      "squadraCasa" => "Boston Celtic",
+      "squadraOspite" => "Los Angeles",
+      "puntiCasa" => 63,
+      "puntiOspite" => 82
+    ],
+    [
+      "squadraCasa" => "Cleveland",
+      "squadraOspite" => "Raptors",
+      "puntiCasa" => 82,
+      "puntiOspite" => 102
+    ],
+    [
+      "squadraCasa" => "ChichagoBulls",
+      "squadraOspite" => "Sacramento",
+      "puntiCasa" => 66,
+      "puntiOspite" => 89
+    ],
+    [
+      "squadraCasa" => "Boolean",
+      "squadraOspite" => "Epicode",
+      "puntiCasa" => 55,
+      "puntiOspite" => 78
+    ]
+  ];
+
+  function getMatches($matches) {
+    foreach($matches as $match) {
+        echo $match["squadraCasa"] . " - " . $match["squadraOspite"] . " | " . $match["puntiCasa"] . " - " . $match["puntiOspite"] . "<br>";
+      }
+  }
+
+
 ?>
 
 
@@ -26,8 +72,12 @@
 
 
 <body>
-    
+    <h1>Snack1</h1>
+<div class="container text-center my-4 ">
+    <?php  getMatches($matches) ?>
+    <br>
 
+</div>
 
 
 </body>
