@@ -7,7 +7,26 @@
 //che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 
 
-
+function getData(){
+    if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['age'])) {
+        $name = $_GET['name'];
+        $email = $_GET['email'];
+        $age = $_GET['age'];
+        if (empty($name) || empty($email) || empty($age)) {
+            echo 'Inserire dei valori nei campi';
+        } else {
+            control($name, $email, $age);
+        }
+    }
+}
+function control($name,$email,$age){
+    if (strlen($name) > 2 && strpos($email, '.') !== false && strpos($email, '@') && is_numeric($age)) {
+        //echo "nome: $name email: $email età: $age";
+        echo "Accesso riuscito";
+    } else {
+        echo "Accesso negato";
+    }    
+}
 
 
 
@@ -43,7 +62,16 @@
 
 <body>
   
-
+<h2>Snack 2</h2>
+        <form action="index.php" method="GET">
+            <input type="text" placeholder="Inserisci nome" name="name">
+            <input type="email" placeholder="Inserisci una email" name="email">
+            <input type="number" placeholder="Inserisci la tua età" name="age">
+            <button type="submit">Invia</button>
+        </form>
+            <?php
+           getData();
+            ?>
 
 </body>
 </html>
